@@ -33,3 +33,5 @@ def student_list(request):
     if request.method == 'GET':
         serializers = StudentSerializers(Student.objects.all(), many=True)
         return Response(serializers.data)
+    else:
+        return Response()
