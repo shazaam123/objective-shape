@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "student",
+    "enrollment"
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

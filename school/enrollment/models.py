@@ -1,5 +1,6 @@
 from django.db import models
 from student.models import Student
+from django.contrib.postgres.fields import JSONField
 
 
 class BaseModel(models.Model):
@@ -35,3 +36,9 @@ class StudentInformation(BaseModel):
     relationship = models.CharField(max_length=255)
     language = models.CharField(max_length=255)
     language_list = models.CharField(max_length=255)
+
+
+class EducationBackground(BaseModel):
+    high_school_name = models.CharField(max_length=255)
+    graduation_date = models.DateField()
+    school_address = JSONField()
