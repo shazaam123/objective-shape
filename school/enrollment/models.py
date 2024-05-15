@@ -10,5 +10,28 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Enrollment(BaseModel):
-    students = models.ForeignKey(Student, on_delete=models.CASCADE)
+class StudentInformation(BaseModel):
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    )
+    first_name = models.CharField(max_length=255)
+    middle_initial = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    birth_date = models.DateField()
+    gender = models.CharField(max_length=255, choices=GENDER_CHOICES)
+    citizenship = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    street = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    zip = models.IntegerField()
+    country = models.CharField(max_length=255)
+    emergency_contact = models.CharField(max_length=255)
+    emergency_first_name = models.CharField(max_length=255)
+    emergency_last_name = models.CharField(max_length=255)
+    relationship = models.CharField(max_length=255)
+    language = models.CharField(max_length=255)
+    language_list = models.CharField(max_length=255)
