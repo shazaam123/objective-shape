@@ -1,4 +1,9 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Student)
+
+class StudentAdmin(admin.ModelAdmin):
+    search_fields = ['first_name', 'last_name']
+
+
+admin.site.register(Student, StudentAdmin)
