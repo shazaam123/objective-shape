@@ -6,4 +6,4 @@ class StudentAdmin(admin.ModelAdmin):
     search_fields = ['first_name', 'last_name']
 
 
-admin.site.register(Student, StudentAdmin)
+admin.site.register(StudentInfo, StudentAdmin)

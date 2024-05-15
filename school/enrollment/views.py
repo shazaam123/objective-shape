@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from .models import StudentInformation, EducationBackground
 from .serializers import StudentInformationSerializers, EducationBackgroundSerializers
-from student.models import Student
+from student.models import StudentInfo
 from student.serializers import StudentSerializers, EducationBackgroundSerializers
 
 
