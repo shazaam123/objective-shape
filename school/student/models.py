@@ -10,13 +10,16 @@ class BaseModel(models.Model):
 
 
 class Student(BaseModel):
+    GENDER_CHOICES = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    )
     first_name = models.CharField(max_length=255)
     middle_initial = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    month = models.CharField(max_length=255)
-    day = models.IntegerField()
-    year = models.IntegerField()
-    gender = models.CharField(max_length=255)
+    birthdata = models.DateField()
+    gender = models.CharField(max_length=255, choices=GENDER_CHOICES)
     citizenship = models.CharField(max_length=255)
     phone = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
