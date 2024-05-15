@@ -1,5 +1,4 @@
 from django.db import models
-from enrollment.models import StudentInformation, EducationBackground
 
 
 class BaseModel(models.Model):
@@ -10,8 +9,8 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Student(BaseModel):
+class StudentInfo(BaseModel):
     student_id = models.ForeignKey(
-        StudentInformation, on_delete=models.CASCADE, related_name='')
+        'enrollment.StudentInformation', on_delete=models.CASCADE, related_name='')
     education_id = models.ForeignKey(
-        EducationBackground, on_delete=models.CASCADE, related_name='')
+        'enrollment.EducationBackground', on_delete=models.CASCADE, related_name='')
