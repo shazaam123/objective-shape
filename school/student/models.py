@@ -1,4 +1,5 @@
 from django.db import models
+from enrollment.models import StudentInformation, EducationBackground
 
 
 class BaseModel(models.Model):
@@ -10,10 +11,7 @@ class BaseModel(models.Model):
 
 
 class Student(BaseModel):
-    
-    school_name = models.CharField(max_length=255)
-    graduation_date = models.DateField()
-    school_address = models.CharField(max_length=255)
-    school_city = models.CharField(max_length=255)
-    school_state = models.CharField(max_length=255)
-    payment_method = models.CharField(max_length=255)
+    student_id = models.ForeignKey(
+        StudentInformation, on_delete=models.CASCADE, related_name='')
+    education_id = models.ForeignKey(
+        EducationBackground, on_delete=models.CASCADE, related_name='')
